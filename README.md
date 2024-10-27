@@ -27,8 +27,8 @@ This project was developed as part of a task given by **AIMonk**.
 
 ### Prerequisites
 
-- Python 3.7 or higher
-- Docker (optional for containerization)
+- Python 3.9 or higher
+- Docker (for containerization)
 
 ### Setup Instructions
 
