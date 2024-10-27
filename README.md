@@ -33,34 +33,34 @@ This project was developed as part of a task given by **AIMonk**.
 ### Setup Instructions
 
 
-##Install dependencies: Create a virtual environment (optional but recommended):  
+## Install dependencies: Create a virtual environment (optional but recommended):  
 
 python -m venv venv
 source venv/bin/activate  # On Windows use `venv\Scripts\activate`
 
 
-##Install the required packages:
+## Install the required packages:
 
 pip install -r requirements.txt
 
-##Run the application:
+## Run the application:
 
 python ui_service_main.py
 
 Access the application in your browser at http://127.0.0.1:5000.
 
-##Running with Docker
+## Running with Docker
 
 docker build -t aimonk-object-detection .
 
-##Run the Docker container:
+## Run the Docker container:
 
 docker run -p 5000:5000 aimonk-object-detection
 
 Access the application in your browser at http://127.0.0.1:5000.
 
-##Output
-##The application will generate:
+## Output
+## The application will generate:
 
 A detected image with bounding boxes around the objects.
 A JSON file containing details of the detected objects.
