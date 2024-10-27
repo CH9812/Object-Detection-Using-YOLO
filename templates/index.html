@@ -1,0 +1,144 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object Detection - Image Upload</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #eaf7f0;
+            padding: 20px;
+            color: #333;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: #10743b;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .upload-form {
+            padding: 20px;
+            border: 2px solid #4caf50;
+            border-radius: 10px;
+            text-align: center;
+            background-color: #f9f9f9;
+        }
+        input[type="file"] {
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 5px;
+            border: 2px solid #4caf50;
+            width: calc(100% - 20px);
+            outline: none;
+            transition: border-color 0.3s;
+        }
+        input[type="file"]:focus {
+            border-color: #45a049;
+        }
+        .form-button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 16px;
+            margin-top: 10px;
+            transition: background-color 0.3s;
+        }
+        .form-button:hover {
+            background-color: #45a049;
+        }
+        .download-link {
+            margin-top: 20px;
+            display: block;
+            text-align: center;
+            color: #007bff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .download-link:hover {
+            text-decoration: underline;
+        }
+        .status-message {
+            margin-top: 20px;
+            color: #e74c3c;
+            font-weight: bold;
+            display: none; /* Hide by default */
+        }
+
+        .download-link {
+            margin-top: 20px;
+            display: block;
+            text-align: center;
+            color: #007bff;
+            text-decoration: none;
+        }
+        .detected-image {
+            margin-top: 20px;
+            text-align: center;
+        }
+        .detected-image img {
+            height: 500px; /* Set the desired height */
+            width: auto; /* Maintain aspect ratio */
+        }
+        .aimonk-logo {
+            font-size: 24px;
+            color: #4caf50;
+            text-align: center;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Object Detection - Upload Image</h2>
+        <div class="upload-form">
+            <form action="/predict_img" method="POST" enctype="multipart/form-data" id="uploadForm">
+                <input type="file" name="file" required>
+                <br>
+                <input type="submit" value="Upload Image" class="form-button">
+            </form>
+            <!--{% if json_path %}
+                <a href="{{ url_for('static', filename=json_path) }}" class="download-link" download>Download Output JSON</a>
+                <a href="{{ url_for('static', filename=detected_image_path) }}" class="download-link" download>Download Detected Image</a>
+            {% endif %} -->
+            {% if detected_image %}
+            <div class="detected-image">
+                <h3>Detected Image:</h3>
+                <img src="{{ url_for('static', filename=detected_image) }}" alt="Detected Image">
+            </div>
+        {% endif %}
+
+        <!--{% if json_path %}
+            <a href="{{ url_for('static', filename=json_path) }}" class="download-link" download>Download Output JSON</a>
+        {% endif %}-->
+
+        <div class="aimonk-logo">
+            <p>Powered by <strong>AIMonk</strong></p>
+        </div>
+            <div class="status-message" id="statusMessage">Image uploaded successfully!</div>
+        </div>
+    </div>
+
+    <script>
+        const uploadForm = document.getElementById('uploadForm');
+        const statusMessage = document.getElementById('statusMessage');
+
+        uploadForm.addEventListener('submit', function() {
+            statusMessage.style.display = 'block'; // Show the status message
+            statusMessage.textContent = 'Uploading...'; // Change message during upload
+        });
+    </script>
+</body>
+</html>
