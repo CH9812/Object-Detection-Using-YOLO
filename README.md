@@ -9,6 +9,9 @@ This project implements an object detection system using the YOLO (You Only Look
 
 ![image1](https://github.com/user-attachments/assets/98957bf5-c71b-42d9-9732-4a01a41db6b0)
 
+![image2](https://github.com/user-attachments/assets/ff5676e7-bacf-4893-935c-c7bfad2d6c90)
+
+
 ### Task Provided By
 
 This project was developed as part of a task given by **AIMonk**.
