@@ -5,11 +5,15 @@
 
 This project implements an object detection system using the YOLO (You Only Look Once) model. The application allows users to upload images and receive real-time detection results, including bounding boxes around detected objects and corresponding JSON outputs.
 
-## Output
+## Output Image
 
 ![image1](https://github.com/user-attachments/assets/98957bf5-c71b-42d9-9732-4a01a41db6b0)
 
 ![image2](https://github.com/user-attachments/assets/ff5676e7-bacf-4893-935c-c7bfad2d6c90)
+
+## JSON Format Output
+
+![image](https://github.com/user-attachments/assets/833d7ec5-e0de-4379-b8d9-f8b45d979be6)
 
 
 ### Task Provided By
