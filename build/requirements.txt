@@ -1,0 +1,9 @@
+flask==3.0.3
+ultralytics
+torch==2.4.1
+torchvision==0.19.1
+numpy
+requests
+Werkzeug
+opencv-python==4.6.0.66
+Pillow==11.0.0
